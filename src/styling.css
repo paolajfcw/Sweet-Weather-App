@@ -1,0 +1,68 @@
+section.contents {
+  background-image: url(https://a9u8z5j7.rocketcdn.me/wp-content/uploads/2019/01/Shirley-Castillo-PLaya-Langosta-1024x768.jpg),
+    linear-gradient(-20deg, #fc6076 0%, #ff9a44 100%);
+  display: block;
+  margin: 0 auto;
+  max-width: 700px;
+  padding: 43px;
+  color: #fff;
+  font-family: "Balsamiq Sans", cursive;
+  border-radius: 4px;
+}
+
+h1 {
+  height: 150px;
+  margin-bottom: 0;
+}
+h1 .temp {
+  font-size: 100px;
+}
+.degrees {
+  font-size: 30px;
+  line-height: 2.7;
+  position: relative;
+  bottom: 45px;
+}
+.font-day {
+  font-size: 30px;
+  color: #fff;
+}
+
+ul {
+  padding: 0;
+}
+.list {
+  list-style: none;
+  font-size: 30px;
+  color: #fff;
+}
+
+h2 {
+  font-size: 50px;
+  padding: 15px 0;
+  text-align: center;
+}
+h3 {
+  font-size: 25px;
+  text-align: center;
+}
+form {
+  margin: 10px auto 20px;
+}
+
+main header {
+  border: 3px solid #fff;
+  border-radius: 8px;
+  font-size: 25px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 40px;
+  margin: 6px 0;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+main header:hover {
+  border: 3px solid black;
+  cursor: pointer;
+  opacity: 0.9;
+  color: black;
+}

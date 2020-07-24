@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/styling.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/9e4e12b2bc.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <section class="contents">
+        <div class="row">
+          <div class="col-6">
+            <h1>
+              <span class="temp" id="temperature"></span>
+              <span class="degrees"
+                ><a href="#" class="font-day" id="celsius-temp">°C</a> |
+                <a href="#" class="font-day" id="fahrenheit-temp">°F</a></span
+              >
+            </h1>
+            <ul class="list">
+              <li id="date-time"></li>
+            </ul>
+          </div>
+          <div class="col-6 p-0">
+            <h2>
+              <span id="city-name"></span>
+              <br />
+              <i class="fas fa-cloud-sun"></i>
+            </h2>
+            <h3>
+              <span id="description"></span> <br />
+              Wind: <span id="wind"></span>km/h <br />
+              Humidity: <span id="humidity"></span>%
+            </h3>
+          </div>
+        </div>
+
+        <form id="form-search">
+          <div class="row">
+            <div class="col-5 pr-0">
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter your city"
+                  autocomplete="off"
+                  id="search-input-value"
+                />
+              </div>
+            </div>
+            <div class="col-3 pr-0 pl-1">
+              <button type="submit" class="btn btn-light">
+                Search
+              </button>
+            </div>
+            <div class="col-4 pl-1">
+              <button type="button" class="btn btn-light" id="current-location">
+                📍 Location
+              </button>
+            </div>
+          </div>
+        </form>
+
+        <main>
+          <div class="row">
+            <div class="col-6">
+              <header>
+                Monday ⛈ 16°
+              </header>
+            </div>
+            <div class="col-6">
+              <header>
+                Tuesday ☁ 18°
+              </header>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <header>
+                Wednesday🌩 19°
+              </header>
+            </div>
+            <div class="col-6">
+              <header>
+                Thursday 🌦 20°
+              </header>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <header>
+                Friday ☀ 22°
+              </header>
+            </div>
+            <div class="col-6">
+              <header>
+                Saturday ☀ 23°
+              </header>
+            </div>
+          </div>
+        </main>
+      </section>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
