@@ -1,24 +1,28 @@
-let now = new Date();
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let day = days[now.getDay()];
-let hour = now.getHours();
-if (hour < 10) {
-  hour = `0${hour}`;
+function formatDate(timeResult) {
+  let now = new Date(timeResult);
+  let hour = now.getHours();
+  if (hour < 10) {
+    hour = `0${hour}`;
+  }
+
+  let minute = now.getMinutes();
+  if (minute < 10) {
+    minute = `0${minute}`;
+  }
+
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[now.getDay()];
+
+  return `${day} ${hour}:${minute}`;
 }
-let minute = now.getMinutes();
-if (minute < 10) {
-  minute = `0${minute}`;
-}
-let dateTime = document.querySelector("#date-time");
-dateTime.innerHTML = `${day} ${hour}:${minute}`;
 
 function showWeatherInfo(response) {
   document.querySelector("#temperature").innerHTML = Math.round(
@@ -28,10 +32,13 @@ function showWeatherInfo(response) {
     "#city-name"
   ).innerHTML = response.data.name.toUpperCase();
   document.querySelector("#description").innerHTML =
-    response.data.weather[0].main;
+    response.data.weather[0].description;
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
+  );
+  document.querySelector("#date-time").innerHTML = formatDate(
+    response.data.dt * 1000
   );
 }
 
