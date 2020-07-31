@@ -15,10 +15,6 @@
       href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap"
       rel="stylesheet"
     />
-    <script
-      src="https://kit.fontawesome.com/9e4e12b2bc.js"
-      crossorigin="anonymous"
-    ></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
   <body>
@@ -41,7 +37,12 @@
             <h2>
               <span id="city-name"></span>
             </h2>
-            <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt="cloudy" class="iconweather" />
+            <img 
+            src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" 
+            alt="cloudy" 
+            class="iconweather" 
+            id="weather-icon"
+            />
             <h3>
               <span id="description"></span> <br />
               Wind: <span id="wind"></span>km/h <br />

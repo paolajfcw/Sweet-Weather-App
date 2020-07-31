@@ -40,6 +40,12 @@ function showWeatherInfo(response) {
   document.querySelector("#date-time").innerHTML = formatDate(
     response.data.dt * 1000
   );
+  let iconElement = document.querySelector("#weather-icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 function searchCity(city) {
