@@ -81,11 +81,12 @@ form {
 h4 {
   font-size: 20px;
   font-weight: 500;
+  line-height: 10px;
 }
 
 .weather-image {
   display: block;
   margin: 0 auto;
   width: 70px;
-  padding-bottom: 22px;
+  padding-bottom: 15px;
 }
