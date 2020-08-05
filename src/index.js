@@ -47,12 +47,33 @@ function showWeatherInfo(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
+function showForecast(response) {
+  let forecastElements = document.querySelector("#forecast");
+  let forecast = response.data.list[0];
+  console.log(forecast);
+  forecastElements.innerHTML = `
+  <div class="col-2 forecast-hours">
+    <h4>
+      23:00 
+    </h4>
+    <img src="https://openweathermap.org/img/wn/${
+      forecast.weather[0].icon
+    }@2x.png" class="weather-image">
+    <div><strong>${Math.round(forecast.main.temp_max)}°</strong> ${Math.round(
+    forecast.main.temp_min
+  )}°</div>
+  </div>`;
+}
+
 function searchCity(city) {
   let apiKey = "caa34f2f02bff4b74600363cf67bbbef";
   let units = "metric";
   let apiEndPoint = "https://api.openweathermap.org/data/2.5/weather";
   let apiUrl = `${apiEndPoint}?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(showWeatherInfo);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(showForecast);
 }
 
 function handleSubmit(event) {
