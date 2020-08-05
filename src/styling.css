@@ -47,7 +47,7 @@ h2 {
 .iconweather {
   display: block;
   margin: 0 auto;
-  width: 100px;
+  width: 110px;
 }
 
 h3 {
@@ -63,19 +63,29 @@ form {
   margin: 10px auto 20px;
 }
 
-main header {
-  border: 3px solid #fff;
-  border-radius: 8px;
-  font-size: 25px;
-  font-weight: 500;
+.forecast-hours {
+  border: 2px solid #fff;
+  border-radius: 6px;
+  font-size: 19px;
   text-align: center;
-  line-height: 40px;
+  line-height: 30px;
   margin: 6px 0;
+  padding: 15px 0;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
-main header:hover {
-  border: 3px solid black;
-  cursor: pointer;
-  opacity: 0.9;
-  color: black;
+
+.forecast-hours:hover {
+  background-color: #c02902;
+}
+
+h4 {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.weather-image {
+  display: block;
+  margin: 0 auto;
+  width: 70px;
+  padding-bottom: 22px;
 }
