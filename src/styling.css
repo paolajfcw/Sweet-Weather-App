@@ -15,14 +15,21 @@ h1 {
   margin-bottom: 0;
 }
 h1 .temp {
-  font-size: 100px;
+  font-size: 90px;
 }
+
 .degrees {
   font-size: 30px;
   line-height: 2.7;
   position: relative;
-  bottom: 45px;
+  bottom: 43px;
 }
+
+.font-day:hover {
+  cursor: pointer;
+  color: #48484a;
+}
+
 .font-day {
   font-size: 30px;
   color: #fff;
@@ -31,14 +38,20 @@ h1 .temp {
 ul {
   padding: 0;
 }
+
 .list {
   list-style: none;
   font-size: 30px;
   color: #fff;
 }
 
+.city-condition {
+  position: relative;
+  left: 20px;
+}
+
 h2 {
-  font-size: 50px;
+  font-size: 45px;
   padding-top: 15px;
   text-align: center;
   margin-bottom: 0;
@@ -60,27 +73,26 @@ h3:first-letter {
 }
 
 form {
-  margin: 10px auto 20px;
+  margin: 20px auto;
 }
 
 .forecast-hours {
-  border: 1px solid #fff;
-  border-radius: 6px;
   font-size: 19px;
   text-align: center;
   line-height: 20px;
   margin: 6px 0;
   padding: 15px 0;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  box-shadow: 8px 8px 12px rgba(150, 122, 122, 0.3);
 }
 
 .forecast-hours:hover {
-  background-color: #c02902;
+  background-color: rgba(150, 122, 122, 0.3);
 }
 
 h4 {
   font-size: 20px;
-  font-weight: 500;
+  font-weight: lighter;
   line-height: 10px;
 }
 
