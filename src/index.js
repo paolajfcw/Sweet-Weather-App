@@ -55,10 +55,14 @@ function showWeatherInfo(response) {
 
 function showForecast(response) {
   let forecastElements = document.querySelector("#forecast");
-  let forecast = response.data.list[0];
-  console.log(forecast);
-  forecastElements.innerHTML = `
-  <div class="col-2 forecast-hours">
+  forecastElements.innerHTML = null;
+  let forecast = null;
+
+  for (let index = 0; index < 6; index++) {
+    forecast = response.data.list[index];
+
+    forecastElements.innerHTML += `
+    <div class="col-2 forecast-hours">
     <h4>
       ${formatHours(forecast.dt * 1000)} 
     </h4>
@@ -66,9 +70,10 @@ function showForecast(response) {
       forecast.weather[0].icon
     }@2x.png" class="weather-image">
     <div><strong>${Math.round(forecast.main.temp_max)}°</strong> ${Math.round(
-    forecast.main.temp_min
-  )}°</div>
-  </div>`;
+      forecast.main.temp_min
+    )}°</div>
+    </div>`;
+  }
 }
 
 function searchCity(city) {
