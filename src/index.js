@@ -1,14 +1,5 @@
-function formatDate(timeResult) {
-  let now = new Date(timeResult);
-  let hour = now.getHours();
-  if (hour < 10) {
-    hour = `0${hour}`;
-  }
-
-  let minute = now.getMinutes();
-  if (minute < 10) {
-    minute = `0${minute}`;
-  }
+function formatDate(timestamp) {
+  let now = new Date(timestamp);
 
   let days = [
     "Sunday",
@@ -21,7 +12,22 @@ function formatDate(timeResult) {
   ];
   let day = days[now.getDay()];
 
-  return `${day} ${hour}:${minute}`;
+  return `${day} ${formatHours(timestamp)}`;
+}
+
+function formatHours(timestamp) {
+  let date = new Date(timestamp);
+  let hour = date.getHours();
+  if (hour < 10) {
+    hour = `0${hour}`;
+  }
+
+  let minute = date.getMinutes();
+  if (minute < 10) {
+    minute = `0${minute}`;
+  }
+
+  return `${hour}:${minute}`;
 }
 
 function showWeatherInfo(response) {
@@ -54,7 +60,7 @@ function showForecast(response) {
   forecastElements.innerHTML = `
   <div class="col-2 forecast-hours">
     <h4>
-      23:00 
+      ${formatHours(forecast.dt * 1000)} 
     </h4>
     <img src="https://openweathermap.org/img/wn/${
       forecast.weather[0].icon
