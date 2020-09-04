@@ -96,6 +96,7 @@ function handleSubmit(event) {
   let searchInput = document.querySelector("#search-input-value");
   let city = searchInput.value;
   searchCity(city);
+  searchInput.value = "";
 }
 
 function retrievePosition(position) {
