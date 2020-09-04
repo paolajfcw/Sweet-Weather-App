@@ -62,7 +62,7 @@ function showForecast(response) {
     forecast = response.data.list[index];
 
     forecastElements.innerHTML += `
-    <div class="col-2 forecast-hours">
+    <div class="col-12 col-md-2 forecast-hours">
     <h4>
       ${formatHours(forecast.dt * 1000)} 
     </h4>
