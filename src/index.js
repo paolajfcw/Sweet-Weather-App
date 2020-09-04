@@ -59,19 +59,22 @@ function showForecast(response) {
   let forecast = null;
 
   for (let index = 0; index < 6; index++) {
+    console.log(response.data.list[index]);
     forecast = response.data.list[index];
-
+    maxTemp[index] = forecast.main.temp_max;
     forecastElements.innerHTML += `
-    <div class="col-12 col-md-2 forecast-hours">
+    <div class="col-2 forecast-hours">
     <h4>
       ${formatHours(forecast.dt * 1000)} 
     </h4>
     <img src="https://openweathermap.org/img/wn/${
       forecast.weather[0].icon
     }@2x.png" class="weather-image">
-    <div><strong>${Math.round(forecast.main.temp_max)}°</strong> ${Math.round(
+    <div><strong id="max-temp">${Math.round(
+      forecast.main.temp_max
+    )}°</strong> <span id="min-temp">${Math.round(
       forecast.main.temp_min
-    )}°</div>
+    )}°</span></div>
     </div>`;
   }
 }
@@ -117,6 +120,11 @@ function showFahrenheitTemp(event) {
   let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(fahrenheitTemp);
+
+  let fahrenheitMaxTemp = document.querySelectorAll("#max-temp");
+  fahrenheitMaxTemp.forEach(function (item, index) {
+    item.innerHTML = `${Math.round((maxTemp[index] * 9) / 5 + 32)}°`;
+  });
 }
 
 function showCelsiusTemp(event) {
@@ -126,6 +134,7 @@ function showCelsiusTemp(event) {
 }
 
 let celsiusTemp = null;
+let maxTemp = [];
 
 let form = document.querySelector("#form-search");
 form.addEventListener("submit", handleSubmit);
