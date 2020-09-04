@@ -59,9 +59,10 @@ function showForecast(response) {
   let forecast = null;
 
   for (let index = 0; index < 6; index++) {
-    console.log(response.data.list[index]);
     forecast = response.data.list[index];
     maxTemp[index] = forecast.main.temp_max;
+    minTemp[index] = forecast.main.temp_min;
+
     forecastElements.innerHTML += `
     <div class="col-2 forecast-hours">
     <h4>
@@ -125,16 +126,32 @@ function showFahrenheitTemp(event) {
   fahrenheitMaxTemp.forEach(function (item, index) {
     item.innerHTML = `${Math.round((maxTemp[index] * 9) / 5 + 32)}°`;
   });
+
+  let fahrenheitMinTemp = document.querySelectorAll("#min-temp");
+  fahrenheitMinTemp.forEach(function (item, index) {
+    item.innerHTML = `${Math.round((minTemp[index] * 9) / 5 + 32)}°`;
+  });
 }
 
 function showCelsiusTemp(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = celsiusTemp;
+
+  let celsiusMaxTemp = document.querySelectorAll("#max-temp");
+  celsiusMaxTemp.forEach(function (item, index) {
+    item.innerHTML = `${Math.round(maxTemp[index])}°`;
+  });
+
+  let celsiusMinTemp = document.querySelectorAll("#min-temp");
+  celsiusMinTemp.forEach(function (item, index) {
+    item.innerHTML = `${Math.round(minTemp[index])}°`;
+  });
 }
 
 let celsiusTemp = null;
 let maxTemp = [];
+let minTemp = [];
 
 let form = document.querySelector("#form-search");
 form.addEventListener("submit", handleSubmit);
